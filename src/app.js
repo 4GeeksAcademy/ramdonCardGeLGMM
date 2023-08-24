@@ -22,7 +22,7 @@ window.onload = function generateCard() {
   cardDiv.style.width = widthInput.value + "px";
   cardDiv.style.height = heightInput.value + "px";
   // Aqui establecimos un temporizador para que se actualize la pagina automaticamente cada 5 segundos
-  setInterval(generateCard, 5000);
+  setInterval(generateCard, 10000);
 };
 
 // funcion que va generando los distintos numeros
