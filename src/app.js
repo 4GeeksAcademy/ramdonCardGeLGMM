@@ -6,24 +6,31 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 // funcion que genera la carta de manera aleatoria llamando las otras dos funciones
-window.onload = function generateCard() {
-  document.querySelector(".card").classList.add(generateRandomSuit());
-  document.querySelector(".card").innerHTML = generateRandomNumber();
+window.onload = function() {
+  generateCard();
   // boton para refrescar la pagina y obtener una nueva carta
   let refreshButton = document.querySelector("#refreshButton");
   refreshButton.addEventListener("click", function() {
     location.reload();
   });
-  let cardDiv = document.querySelector(".card");
-  // Obtener valores de los campos de entrada
-  let widthInput = document.querySelector("#widthInput");
-  let heightInput = document.querySelector("#heightInput");
-  // Establecer el ancho y el alto de la carta
-  cardDiv.style.width = widthInput.value + "px";
-  cardDiv.style.height = heightInput.value + "px";
   // Aqui establecimos un temporizador para que se actualize la pagina automaticamente cada 5 segundos
   setInterval(generateCard, 5000);
 };
+
+//
+function resize() {
+  let widthInput = document.querySelector("#widthInput").value + "px";
+  let heightInput = document.querySelector("#heightInput").value + "px";
+  let cardDiv = document.querySelector("#card");
+  cardDiv.style.width = widthInput;
+  cardDiv.style.height = heightInput;
+}
+
+//
+function generateCard() {
+  document.querySelector("#card").classList.add(generateRandomSuit());
+  document.querySelector("#card").innerHTML = generateRandomNumber();
+}
 
 // funcion que va generando los distintos numeros
 let generateRandomNumber = () => {

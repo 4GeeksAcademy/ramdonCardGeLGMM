@@ -4,7 +4,7 @@ body {
   background: green;
   box-sizing: border-box;
 }
-.card {
+#card {
   text-align: center;
   background: white;
   height: 400px;
