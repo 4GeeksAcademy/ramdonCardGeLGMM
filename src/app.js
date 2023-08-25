@@ -10,19 +10,19 @@ window.onload = function generateCard() {
   document.querySelector(".card").classList.add(generateRandomSuit());
   document.querySelector(".card").innerHTML = generateRandomNumber();
   // boton para refrescar la pagina y obtener una nueva carta
-  let refreshButton = document.getElementById("refreshButton");
+  let refreshButton = document.querySelector("#refreshButton");
   refreshButton.addEventListener("click", function() {
     location.reload();
   });
   let cardDiv = document.querySelector(".card");
   // Obtener valores de los campos de entrada
-  let widthInput = document.getElementById("widthInput");
-  let heightInput = document.getElementById("heightInput");
+  let widthInput = document.querySelector("#widthInput");
+  let heightInput = document.querySelector("#heightInput");
   // Establecer el ancho y el alto de la carta
   cardDiv.style.width = widthInput.value + "px";
   cardDiv.style.height = heightInput.value + "px";
   // Aqui establecimos un temporizador para que se actualize la pagina automaticamente cada 5 segundos
-  setInterval(generateCard, 10000);
+  setInterval(generateCard, 5000);
 };
 
 // funcion que va generando los distintos numeros
