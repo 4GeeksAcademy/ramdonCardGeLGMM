@@ -13,17 +13,20 @@ window.onload = function() {
   refreshButton.addEventListener("click", function() {
     location.reload();
   });
+  document.querySelector("#toResize").addEventListener("click", () => {
+    resize();
+  });
   // Aqui establecimos un temporizador para que se actualize la pagina automaticamente cada 5 segundos
   setInterval(generateCard, 5000);
 };
 
 //
 function resize() {
-  let widthInput = document.querySelector("#widthInput").value + "px";
-  let heightInput = document.querySelector("#heightInput").value + "px";
+  let widthInput = document.querySelector("#widthInput").value;
+  let heightInput = document.querySelector("#heightInput").value;
   let cardDiv = document.querySelector("#card");
-  cardDiv.style.width = widthInput;
-  cardDiv.style.height = heightInput;
+  cardDiv.style.width = widthInput + "px";
+  cardDiv.style.height = heightInput + "px";
 }
 
 //
